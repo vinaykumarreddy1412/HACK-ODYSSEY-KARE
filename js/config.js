@@ -13,7 +13,7 @@ const EVENT_CONFIG = {
   institution: "Kalasalingam Academy of Research and Education (KARE)",
   institutionShort: "KARE",
   tagline: "CODE. CREATE. CONQUER THE ODYSSEY.",
-  description: "A premier 24-hour hackathon bringing student innovators, developers, and visionaries together to build cutting-edge AI and emerging technology solutions addressing global Sustainable Development Goals.",
+  description: "A premier 24-hour national level hackathon bringing student innovators, developers, and visionaries together to build cutting-edge AI and emerging technology solutions addressing global Sustainable Development Goals.",
   
   // Date & Duration
   date: "25 — 26 September 2026",
