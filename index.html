@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HACK ODYSSEY 4.0 — 24-Hour Hackathon | Kalasalingam University & Euphoria 2026</title>
+  <meta name="description" content="Hack Odyssey 4.0 is a premier 24-hour hackathon conducted by Kalasalingam Academy of Research and Education (KARE) under Euphoria 2026. Explore AI, solve SDG challenges, win from ₹1,00,000 prize pool.">
+  <meta name="keywords" content="Hack Odyssey 4.0, Hackathon, Kalasalingam University, KARE, Euphoria 2026, AI Hackathon, CodeChef, ACM, IEEE, GDG, Student Hackathon">
+  
+  <!-- OpenGraph / Social Media Meta -->
+  <meta property="og:title" content="HACK ODYSSEY 4.0 — 24-Hour Hackathon">
+  <meta property="og:description" content="Code. Create. Conquer the Odyssey. 25–26 September 2026 at Krishna Auditorium, KARE. Up to ₹1,00,000 Prize Pool.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#f8fafc">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logos/kalasalingam-round.png">
+
+  <!-- Font Awesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       OPENING / LOADING EXPERIENCE ("ENTERING THE ODYSSEY")
+       ========================================================================== -->
+  <div id="introOverlay" aria-label="Entering the Odyssey intro animation" role="dialog" aria-modal="true">
+    <div class="intro-bg-grid"></div>
+    <div class="intro-card">
+      <div class="intro-logo-wrapper">
+        <div class="intro-energy-ring"></div>
+        <div class="intro-energy-ring-2"></div>
+        <img src="assets/logos/kalasalingam-round.png" alt="Kalasalingam Academy of Research and Education Logo" class="intro-logo-img">
+      </div>
+      <div class="intro-status">
+        <span class="intro-status-dot"></span>
+        <span>ENTERING THE ODYSSEY</span>
+      </div>
+      <h2 class="intro-title">HACK ODYSSEY 4.0</h2>
+      <p class="intro-subtitle">Euphoria 2026 &bull; Kalasalingam University</p>
+    </div>
+    <button id="introSkipBtn" class="intro-skip-btn" aria-label="Skip Intro Animation">
+      Skip Intro <i class="fa-solid fa-forward-step" style="margin-left: 0.3rem;"></i>
+    </button>
+  </div>
+
+  <!-- ==========================================================================
+       BACKGROUND AI NEURAL MESH & PARTICLES (LIGHT FUTURISTIC)
+       ========================================================================== -->
+  <div class="bg-mesh-container" aria-hidden="true">
+    <div class="bg-mesh-gradient"></div>
+    <div class="bg-grid-overlay"></div>
+    <canvas id="aiCanvas"></canvas>
+  </div>
+
+  <div class="site-wrapper">
+
+    <!-- ==========================================================================
+         TOP BRANDING RIBBON
+         ========================================================================== -->
+    <div class="top-brand-ribbon">
+      <div class="container">
+        <div class="brand-ribbon-container">
+          <div class="brand-main-host">
+            <img src="assets/logos/kalasalingam.jpeg" alt="Kalasalingam Academy of Research and Education" class="host-logo-img">
+          </div>
+          <div class="brand-co-partners">
+            <div class="partner-badge-item">
+              <img src="assets/logos/euphoria.jpeg" alt="Euphoria 2026" class="partner-logo-img">
+            </div>
+            <div class="partner-badge-item">
+              <span class="partner-label">Sponsored by</span>
+              <img src="assets/logos/codechef.svg" alt="CodeChef" class="partner-logo-img">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         FLOATING GLASS PILL NAVBAR
+         ========================================================================== -->
+    <header class="navbar-wrapper" id="navbarWrapper">
+      <nav class="navbar-container" aria-label="Primary Navigation">
+        <a href="#hero" class="nav-brand-link" aria-label="Hack Odyssey 4.0 Home">
+          <span>HACK ODYSSEY</span>
+          <span class="nav-brand-badge">4.0</span>
+        </a>
+
+        <ul class="nav-links-desktop">
+          <li class="nav-link-item"><a href="#hero">HOME</a></li>
+          <li class="nav-link-item"><a href="#about">ABOUT</a></li>
+          <li class="nav-link-item"><a href="#event">EVENT</a></li>
+          <li class="nav-link-item"><a href="#sdgs">SDGs</a></li>
+          <li class="nav-link-item"><a href="#venue">VENUE</a></li>
+          <li class="nav-link-item"><a href="#coordinators">COORDINATORS</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="https://chat.whatsapp.com/Kvs4ltMc7wvHQfbZ5DZugD" target="_blank" rel="noopener noreferrer" class="btn-nav-whatsapp js-whatsapp-link" aria-label="Join WhatsApp Group">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>WHATSAPP GROUP</span>
+          </a>
+          <a href="https://euphoria.kalasalingam.ac.in" target="_blank" rel="noopener noreferrer" class="btn-nav-register js-register-link">
+            <span>REGISTER NOW</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Open Navigation Menu">
+            <i class="fa-solid fa-bars-staggered"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer-backdrop" id="drawerBackdrop" aria-hidden="true"></div>
+    <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+      <div class="drawer-header">
+        <a href="#hero" class="nav-brand-link">
+          <span>HACK ODYSSEY</span>
+          <span class="nav-brand-badge">4.0</span>
+        </a>
+        <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close Navigation Menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <ul class="drawer-nav-links">
+        <li><a href="#hero">HOME</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#event">EVENT</a></li>
+        <li><a href="#sdgs">SDGs</a></li>
+        <li><a href="#venue">VENUE</a></li>
+        <li><a href="#coordinators">COORDINATORS</a></li>
+      </ul>
+      <div style="margin-top: auto; display: flex; flex-direction: column; gap: 0.75rem;">
+        <a href="#" class="btn-primary-glow js-register-link" style="width: 100%; text-align: center;">REGISTER NOW</a>
+        <a href="#" class="btn-secondary-glass js-whatsapp-link" style="width: 100%; text-align: center;">
+          <i class="fa-brands fa-whatsapp whatsapp-icon-accent"></i>
+          <span>WHATSAPP GROUP</span>
+        </a>
+      </div>
+    </div>
+
+    <main id="mainContent">
+
+      <!-- ==========================================================================
+           HERO SECTION
+           ========================================================================== -->
+      <section class="hero-section" id="hero">
+        <div class="container">
+          
+          <div class="hero-badge-container reveal-on-scroll">
+            <div class="hero-event-badge">
+              <span class="badge-live-pulse"></span>
+              <span class="badge-text">24-HOUR HACKATHON</span>
+            </div>
+          </div>
+
+          <!-- THE PURE CSS / HTML FUTURISTIC WORDMARK -->
+          <div class="wordmark-container reveal-on-scroll">
+            <div class="wordmark-wrapper">
+              <h1 class="wordmark-title">
+                <span class="word-hack">HACK</span>
+                <span class="word-odyssey">ODYSSEY</span>
+              </h1>
+              
+              <div class="wordmark-edition-container">
+                <div class="edition-glow-halo" aria-hidden="true"></div>
+                <div class="edition-badge-glass">
+                  <span class="wordmark-edition">4.0</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-date-wrapper reveal-on-scroll">
+            <span class="hero-date-text">25 — 26 SEPTEMBER 2026</span>
+          </div>
+
+          <p class="hero-tagline reveal-on-scroll">CODE. CREATE. CONQUER THE ODYSSEY.</p>
+
+          <!-- Glass Info Chips -->
+          <div class="hero-chips-grid reveal-on-scroll">
+            <div class="hero-chip-item">
+              <i class="fa-regular fa-clock hero-chip-icon"></i>
+              <span>24 HOURS</span>
+            </div>
+            <div class="hero-chip-item">
+              <i class="fa-solid fa-location-dot hero-chip-icon"></i>
+              <span>OFFLINE MODE</span>
+            </div>
+            <div class="hero-chip-item">
+              <i class="fa-solid fa-ticket hero-chip-icon"></i>
+              <span>₹300 / MEMBER</span>
+            </div>
+            <div class="hero-chip-item">
+              <i class="fa-solid fa-users hero-chip-icon"></i>
+              <span>TEAM 4–5</span>
+            </div>
+            <div class="hero-chip-item hero-chip-highlight">
+              <i class="fa-solid fa-trophy hero-chip-icon" style="color: var(--accent-electric);"></i>
+              <span>PRIZE UP TO ₹1,00,000</span>
+            </div>
+          </div>
+
+          <!-- Primary Highlighting Action Buttons -->
+          <div class="hero-cta-group reveal-on-scroll" style="margin-top: 2rem; margin-bottom: 2.5rem;">
+            <a href="https://euphoria.kalasalingam.ac.in" target="_blank" rel="noopener noreferrer" class="btn-primary-glow js-register-link">
+              <span>REGISTER NOW</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="https://chat.whatsapp.com/Kvs4ltMc7wvHQfbZ5DZugD" target="_blank" rel="noopener noreferrer" class="btn-secondary-glass js-whatsapp-link">
+              <i class="fa-brands fa-whatsapp whatsapp-icon-accent"></i>
+              <span>JOIN WHATSAPP GROUP</span>
+            </a>
+          </div>
+
+          <!-- Live Countdown Clock -->
+          <div class="hero-countdown-card reveal-on-scroll">
+            <div class="countdown-label">
+              <i class="fa-solid fa-bolt" style="color: var(--accent-cyan); margin-right: 0.4rem;"></i>
+              COUNTDOWN TO THE ODYSSEY
+            </div>
+            <div class="countdown-grid">
+              <div class="countdown-box">
+                <span class="countdown-number" id="countDays">00</span>
+                <span class="countdown-unit">DAYS</span>
+              </div>
+              <div class="countdown-box">
+                <span class="countdown-number" id="countHours">00</span>
+                <span class="countdown-unit">HOURS</span>
+              </div>
+              <div class="countdown-box">
+                <span class="countdown-number" id="countMins">00</span>
+                <span class="countdown-unit">MINUTES</span>
+              </div>
+              <div class="countdown-box">
+                <span class="countdown-number" id="countSecs">00</span>
+                <span class="countdown-unit">SECONDS</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           CONTINUOUS LOGO RAIL ("POWERED BY INNOVATION")
+           ========================================================================== -->
+      <section class="org-rail-section" aria-label="Partner Organizations and Clubs">
+        <div class="org-rail-header">
+          <span class="org-rail-title">POWERED BY INNOVATION</span>
+        </div>
+        <div class="marquee-container">
+          <div class="marquee-track">
+            <!-- Set 1 -->
+            <div class="org-card-item">
+              <img src="assets/logos/acm.jpg" alt="KARE ACM Student Chapter Logo" class="org-logo-img acm-logo-large">
+            </div>
+            <div class="org-card-item">
+              <img src="assets/logos/ieee-eds.jpeg" alt="KARE IEEE Education Society Logo" class="org-logo-img ieee-logo-large">
+            </div>
+            <div class="org-card-item">
+              <img src="assets/logos/gdg.svg" alt="Google Developer Groups on Campus KARE Logo" class="org-logo-img wide-logo">
+            </div>
+            <div class="org-card-item">
+              <img src="assets/logos/gfg.jpeg" alt="Campus Body KARE Logo" class="org-logo-img">
+            </div>
+            <div class="org-card-item">
+              <img src="assets/logos/acm-w.jpeg" alt="KARE ACM-W Logo" class="org-logo-img acm-logo-large">
+            </div>
+
+            <!-- Set 2 (Duplicate for smooth infinite marquee) -->
+            <div class="org-card-item">
+              <img src="assets/logos/acm.jpg" alt="KARE ACM Student Chapter Logo" class="org-logo-img acm-logo-large">
+            </div>
+            <div class="org-card-item">
+              <img src="assets/logos/ieee-eds.jpeg" alt="KARE IEEE Education Society Logo" class="org-logo-img ieee-logo-large">
+            </div>
+            <div class="org-card-item">
+              <img src="assets/logos/gdg.svg" alt="Google Developer Groups on Campus KARE Logo" class="org-logo-img wide-logo">
+            </div>
+            <div class="org-card-item">
+              <img src="assets/logos/gfg.jpeg" alt="Campus Body KARE Logo" class="org-logo-img">
+            </div>
+            <div class="org-card-item">
+              <img src="assets/logos/acm-w.jpeg" alt="KARE ACM-W Logo" class="org-logo-img acm-logo-large">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           EVENT HIGHLIGHTS & PRIZE POOL SHOWCASE
+           ========================================================================== -->
+      <section class="highlights-section" id="highlights">
+        <div class="container">
+          
+          <!-- ₹1,00,000 Giant Prize Pool Showcase -->
+          <div class="prize-hero-card reveal-on-scroll">
+            <div class="prize-top-badge">
+              <i class="fa-solid fa-crown" style="color: var(--accent-cyan);"></i>
+              PREMIER PRIZE REWARD
+            </div>
+            <div class="prize-amount-huge">₹1,00,000</div>
+            <h3 class="prize-pool-label">TOTAL PRIZE POOL</h3>
+            <p class="prize-desc">Compete against the brightest minds across India. Build visionary prototypes, impress industry judges, and win prestigious prizes and recognition.</p>
+          </div>
+
+          <!-- Secondary Metric Grid -->
+          <div class="stats-grid">
+            <div class="stat-card-glass reveal-on-scroll">
+              <div class="stat-card-icon-wrap">
+                <i class="fa-regular fa-calendar-check"></i>
+              </div>
+              <div class="stat-value">25–26</div>
+              <div class="stat-label">SEPTEMBER 2026</div>
+            </div>
+
+            <div class="stat-card-glass reveal-on-scroll">
+              <div class="stat-card-icon-wrap">
+                <i class="fa-solid fa-hourglass-half"></i>
+              </div>
+              <div class="stat-value">24</div>
+              <div class="stat-label">HOURS OF HACKING</div>
+            </div>
+
+            <div class="stat-card-glass reveal-on-scroll">
+              <div class="stat-card-icon-wrap">
+                <i class="fa-solid fa-receipt"></i>
+              </div>
+              <div class="stat-value">₹300</div>
+              <div class="stat-label">PER MEMBER</div>
+            </div>
+
+            <div class="stat-card-glass reveal-on-scroll">
+              <div class="stat-card-icon-wrap">
+                <i class="fa-solid fa-people-group"></i>
+              </div>
+              <div class="stat-value">4–5</div>
+              <div class="stat-label">TEAM MEMBERS</div>
+            </div>
+
+            <div class="stat-card-glass reveal-on-scroll">
+              <div class="stat-card-icon-wrap">
+                <i class="fa-solid fa-building-columns"></i>
+              </div>
+              <div class="stat-value">OFFLINE</div>
+              <div class="stat-label">ON-CAMPUS MODE</div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           01 / ABOUT THE EVENT
+           ========================================================================== -->
+      <section class="about-section section-padding" id="about">
+        <div class="container">
+          <div class="about-split-grid">
+            
+            <div class="reveal-on-scroll">
+              <span class="section-tag">01 / ABOUT THE ODYSSEY</span>
+              <h2 class="about-headline">BUILD BEYOND <br><span class="gradient-span">THE ORDINARY.</span></h2>
+              <p class="about-paragraph">
+                <strong>Hack Odyssey 4.0</strong> is a 24-hour hackathon conducted by Kalasalingam Academy of Research and Education under the Euphoria 2026 event. It brings students together to explore artificial intelligence and emerging technologies, solve real-world problems, collaborate with peers and build innovative solutions with meaningful impact.
+              </p>
+              
+              <div class="about-tags-flex">
+                <span class="about-tag-badge"><i class="fa-solid fa-brain" style="color: var(--accent-electric); margin-right: 0.35rem;"></i> Artificial Intelligence</span>
+                <span class="about-tag-badge"><i class="fa-solid fa-microchip" style="color: var(--accent-cyan); margin-right: 0.35rem;"></i> Emerging Tech</span>
+                <span class="about-tag-badge"><i class="fa-solid fa-handshake" style="color: var(--accent-violet); margin-right: 0.35rem;"></i> Collaboration</span>
+                <span class="about-tag-badge"><i class="fa-solid fa-lightbulb" style="color: #f59e0b; margin-right: 0.35rem;"></i> Problem Solving</span>
+                <span class="about-tag-badge"><i class="fa-solid fa-leaf" style="color: #10b981; margin-right: 0.35rem;"></i> Sustainability</span>
+              </div>
+            </div>
+
+            <div class="about-feature-box reveal-on-scroll">
+              <div class="about-pillar-item">
+                <div class="pillar-icon-box">
+                  <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+                <div>
+                  <h3 class="pillar-title">AI & Emerging Tech Focus</h3>
+                  <p class="pillar-desc">Leverage cutting-edge LLMs, computer vision, generative AI, and embedded IoT architectures to solve critical challenges.</p>
+                </div>
+              </div>
+
+              <div class="about-pillar-item">
+                <div class="pillar-icon-box">
+                  <i class="fa-solid fa-bullseye"></i>
+                </div>
+                <div>
+                  <h3 class="pillar-title">Real-World SDG Impact</h3>
+                  <p class="pillar-desc">Direct alignment with United Nations Sustainable Development Goals ensuring real, tangible impact.</p>
+                </div>
+              </div>
+
+              <div class="about-pillar-item">
+                <div class="pillar-icon-box">
+                  <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div>
+                  <h3 class="pillar-title">National Stage & Mentorship</h3>
+                  <p class="pillar-desc">Network with veteran researchers, industry leaders, and tech pioneers guiding your implementation.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           02 / EVENT DASHBOARD & SPECIFICATIONS
+           ========================================================================== -->
+      <section class="dashboard-section section-padding" id="event">
+        <div class="container">
+          <div class="section-header reveal-on-scroll">
+            <span class="section-tag">02 / EVENT SPECIFICATIONS</span>
+            <h2 class="section-title">COMMAND <span class="gradient-span">DASHBOARD</span></h2>
+            <p class="section-subtitle">Everything you need to know about the 24-hour sprint in one sleek view.</p>
+          </div>
+
+          <div class="specs-grid">
+            <div class="spec-card reveal-on-scroll">
+              <div class="spec-header">
+                <span class="spec-key">EVENT</span>
+                <i class="fa-solid fa-terminal spec-icon"></i>
+              </div>
+              <div class="spec-value">Hack Odyssey 4.0</div>
+              <div class="spec-sub">24h Hackathon</div>
+            </div>
+
+            <div class="spec-card reveal-on-scroll">
+              <div class="spec-header">
+                <span class="spec-key">DURATION</span>
+                <i class="fa-regular fa-clock spec-icon"></i>
+              </div>
+              <div class="spec-value">24 Hours Non-Stop</div>
+              <div class="spec-sub">Intensive Prototyping Sprint</div>
+            </div>
+
+            <div class="spec-card reveal-on-scroll">
+              <div class="spec-header">
+                <span class="spec-key">DATE</span>
+                <i class="fa-regular fa-calendar spec-icon"></i>
+              </div>
+              <div class="spec-value">25–26 September 2026</div>
+              <div class="spec-sub">Euphoria 2026 Fest</div>
+            </div>
+
+            <div class="spec-card reveal-on-scroll">
+              <div class="spec-header">
+                <span class="spec-key">REGISTRATION FEE</span>
+                <i class="fa-solid fa-tags spec-icon"></i>
+              </div>
+              <div class="spec-value">₹300 / Member</div>
+              <div class="spec-sub">Inclusive of Food & Amenities</div>
+            </div>
+
+            <div class="spec-card reveal-on-scroll">
+              <div class="spec-header">
+                <span class="spec-key">TEAM SIZE</span>
+                <i class="fa-solid fa-user-group spec-icon"></i>
+              </div>
+              <div class="spec-value">4–5 Members</div>
+              <div class="spec-sub">Interdisciplinary Teams Welcome</div>
+            </div>
+
+            <div class="spec-card reveal-on-scroll">
+              <div class="spec-header">
+                <span class="spec-key">MODE</span>
+                <i class="fa-solid fa-location-crosshairs spec-icon"></i>
+              </div>
+              <div class="spec-value">Offline (On-Campus)</div>
+              <div class="spec-sub">High-Speed WiFi & Power Stations</div>
+            </div>
+
+            <div class="spec-card reveal-on-scroll">
+              <div class="spec-header">
+                <span class="spec-key">PRIZE POOL</span>
+                <i class="fa-solid fa-award spec-icon"></i>
+              </div>
+              <div class="spec-value" style="color: var(--accent-electric);">Up to ₹1,00,000</div>
+              <div class="spec-sub">Cash, Trophies & Certificates</div>
+            </div>
+
+            <div class="spec-card reveal-on-scroll">
+              <div class="spec-header">
+                <span class="spec-key">VENUE</span>
+                <i class="fa-solid fa-landmark spec-icon"></i>
+              </div>
+              <div class="spec-value">Krishna Auditorium</div>
+              <div class="spec-sub">Kalasalingam University (KARE)</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           03 / SDG IMPACT
+           ========================================================================== -->
+      <section class="sdg-section section-padding" id="sdgs">
+        <div class="container">
+          <div class="section-header reveal-on-scroll">
+            <span class="section-tag">03 / SUSTAINABLE DEVELOPMENT GOALS</span>
+            <h2 class="section-title">OUR <span class="gradient-span">SDG IMPACT</span></h2>
+            <p class="section-subtitle">Hackers are challenged to ideate, architect, and deploy intelligent technical interventions under 6 core UN SDG themes.</p>
+          </div>
+
+          <div class="sdg-cards-grid" id="sdgGrid">
+            <!-- Dynamically populated via js/main.js & js/config.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           04 / THE ODYSSEY DESTINATION (VENUE)
+           ========================================================================== -->
+      <section class="venue-section section-padding" id="venue">
+        <div class="container">
+          <div class="section-header reveal-on-scroll">
+            <span class="section-tag">04 / THE ODYSSEY DESTINATION</span>
+            <h2 class="section-title">EVENT <span class="gradient-span">VENUE</span></h2>
+            <p class="section-subtitle">State-of-the-art auditorium equipped with high-density networking, power hubs, and 24-hour developer support facilities.</p>
+          </div>
+
+          <div class="venue-split-layout">
+            <!-- Left Info Card -->
+            <div class="venue-info-card reveal-on-scroll">
+              <div>
+                <span class="venue-destination-tag">DESTINATION CAMPUS</span>
+                <h3 class="venue-auditorium-name">KRISHNA AUDITORIUM</h3>
+                <p class="venue-uni-name">Kalasalingam Academy of Research and Education (KARE)</p>
+
+                <ul class="venue-details-list">
+                  <li class="venue-detail-item">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    <span>HMGG+2W6, Krishnan Kovil, Kunnur, Tamil Nadu 626126</span>
+                  </li>
+                  <li class="venue-detail-item">
+                    <i class="fa-solid fa-wifi"></i>
+                    <span>High-Speed Gigabit Dedicated Wi-Fi & Dedicated LAN Drops</span>
+                  </li>
+                  <li class="venue-detail-item">
+                    <i class="fa-solid fa-plug-circle-bolt"></i>
+                    <span>Uninterrupted Power Backup with Dedicated Charging Stations</span>
+                  </li>
+                  <li class="venue-detail-item">
+                    <i class="fa-solid fa-utensils"></i>
+                    <span>24/7 Food, Refreshments & Rest Zones for all Participants</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
+                <a href="https://maps.google.com/?q=KRISHNA+AUDITORIUM,+Krishnan+Kovil,+Tamil+Nadu+626126" target="_blank" rel="noopener noreferrer" class="btn-primary-glow" style="padding: 0.8rem 1.6rem; font-size: 0.9rem;">
+                  <i class="fa-solid fa-diamond-turn-right"></i>
+                  <span>GET DIRECTIONS</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right Styled Map Frame -->
+            <div class="venue-map-wrapper reveal-on-scroll">
+              <iframe 
+                id="venueMapIframe" 
+                class="venue-map-iframe"
+                src="https://maps.google.com/maps?q=KRISHNA+AUDITORIUM,+Krishnan+Kovil,+Tamil+Nadu+626126&t=&z=17&ie=UTF8&iwloc=&output=embed" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Krishna Auditorium Map - Kalasalingam Academy of Research and Education">
+              </iframe>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           05 / LEADERSHIP & CONVENORS
+           ========================================================================== -->
+      <section class="leadership-section section-padding" id="leadership">
+        <div class="container">
+          <div class="section-header reveal-on-scroll">
+            <span class="section-tag">05 / LEADERSHIP & CONVENORS</span>
+            <h2 class="section-title">THE PEOPLE BEHIND <span class="gradient-span">THE ODYSSEY</span></h2>
+            <p class="section-subtitle">Visionary academic leadership fostering research, innovation, and technological excellence at Kalasalingam University.</p>
+          </div>
+
+          <h3 class="subsection-title reveal-on-scroll" style="margin-bottom: 2rem;">CONVENORS</h3>
+          <div class="convenors-grid">
+            <div class="convenor-card reveal-on-scroll">
+              <div class="academic-avatar-circle">PD</div>
+              <h3 class="convenor-name">Dr. P. Deepalakshmi</h3>
+              <p class="convenor-role">Dean / SoC</p>
+              <p class="convenor-inst">School of Computing &bull; KARE</p>
+            </div>
+
+            <div class="convenor-card reveal-on-scroll">
+              <div class="academic-avatar-circle">RS</div>
+              <h3 class="convenor-name">Dr. R. Raja Subramanian</h3>
+              <p class="convenor-role">HoD / CSE</p>
+              <p class="convenor-inst">Department of Computer Science &amp; Engineering &bull; KARE</p>
+            </div>
+
+            <div class="convenor-card reveal-on-scroll">
+              <div class="academic-avatar-circle">NB</div>
+              <h3 class="convenor-name">Dr. N. C. Brintha</h3>
+              <p class="convenor-role">HoD / IT</p>
+              <p class="convenor-inst">Department of Information Technology &bull; KARE</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           06 / COORDINATORS (FACULTY & STUDENT)
+           ========================================================================== -->
+      <section class="coordinators-section section-padding" id="coordinators">
+        <div class="container">
+          <div class="section-header reveal-on-scroll">
+            <span class="section-tag">06 / COORDINATION TEAM</span>
+            <h2 class="section-title">FACULTY &amp; <span class="gradient-span">STUDENT COORDINATORS</span></h2>
+            <p class="section-subtitle">Dedicated faculty mentors and student leaders available for participant assistance, registrations, and logistics.</p>
+          </div>
+
+          <!-- Faculty Coordinators Grid -->
+          <h3 class="subsection-title reveal-on-scroll">FACULTY COORDINATORS</h3>
+          <div class="faculty-grid" id="facultyGrid">
+            <!-- Dynamically populated via config.js -->
+          </div>
+
+          <!-- Student Coordinators Grid -->
+          <h3 class="subsection-title reveal-on-scroll" style="margin-top: 2rem;">STUDENT COORDINATORS</h3>
+          <div class="student-grid" id="studentGrid">
+
+            <!-- C YASASVI -->
+            <div class="student-coord-card reveal-on-scroll">
+              <div class="student-top-info" style="margin-bottom: 1.25rem;">
+                <div class="student-avatar">CY</div>
+                <div>
+                  <span class="student-label">Student Coordinator</span>
+                  <h4 class="student-name">C YASASVI</h4>
+                </div>
+              </div>
+              <div class="student-actions-flex">
+                <a href="tel:919390198225" class="btn-call-coordinator" aria-label="Call C YASASVI">
+                  <i class="fa-solid fa-phone"></i>
+                  <span>CALL</span>
+                </a>
+                <a href="https://api.whatsapp.com/send?phone=919390198225&text=Hi%20C%20YASASVI,%20I%20have%20a%20query%20regarding%20Hack%20Odyssey%204.0" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-coordinator" aria-label="WhatsApp C YASASVI">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.35rem;"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                  <span>WHATSAPP</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- SAI CHAKRADHAR -->
+            <div class="student-coord-card reveal-on-scroll">
+              <div class="student-top-info" style="margin-bottom: 1.25rem;">
+                <div class="student-avatar">SC</div>
+                <div>
+                  <span class="student-label">Student Coordinator</span>
+                  <h4 class="student-name">SAI CHAKRADHAR</h4>
+                </div>
+              </div>
+              <div class="student-actions-flex">
+                <a href="tel:916302607469" class="btn-call-coordinator" aria-label="Call SAI CHAKRADHAR">
+                  <i class="fa-solid fa-phone"></i>
+                  <span>CALL</span>
+                </a>
+                <a href="https://api.whatsapp.com/send?phone=916302607469&text=Hi%20SAI%20CHAKRADHAR,%20I%20have%20a%20query%20regarding%20Hack%20Odyssey%204.0" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-coordinator" aria-label="WhatsApp SAI CHAKRADHAR">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.35rem;"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                  <span>WHATSAPP</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- UMESH -->
+            <div class="student-coord-card reveal-on-scroll">
+              <div class="student-top-info" style="margin-bottom: 1.25rem;">
+                <div class="student-avatar">UM</div>
+                <div>
+                  <span class="student-label">Student Coordinator</span>
+                  <h4 class="student-name">UMESH</h4>
+                </div>
+              </div>
+              <div class="student-actions-flex">
+                <a href="tel:919573861418" class="btn-call-coordinator" aria-label="Call UMESH">
+                  <i class="fa-solid fa-phone"></i>
+                  <span>CALL</span>
+                </a>
+                <a href="https://api.whatsapp.com/send?phone=919573861418&text=Hi%20UMESH,%20I%20have%20a%20query%20regarding%20Hack%20Odyssey%204.0" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-coordinator" aria-label="WhatsApp UMESH">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.35rem;"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                  <span>WHATSAPP</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- S TAHA -->
+            <div class="student-coord-card reveal-on-scroll">
+              <div class="student-top-info" style="margin-bottom: 1.25rem;">
+                <div class="student-avatar">ST</div>
+                <div>
+                  <span class="student-label">Student Coordinator</span>
+                  <h4 class="student-name">S TAHA</h4>
+                </div>
+              </div>
+              <div class="student-actions-flex">
+                <a href="tel:917893340788" class="btn-call-coordinator" aria-label="Call S TAHA">
+                  <i class="fa-solid fa-phone"></i>
+                  <span>CALL</span>
+                </a>
+                <a href="https://api.whatsapp.com/send?phone=917893340788&text=Hi%20S%20TAHA,%20I%20have%20a%20query%20regarding%20Hack%20Odyssey%204.0" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-coordinator" aria-label="WhatsApp S TAHA">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.35rem;"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                  <span>WHATSAPP</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           FINAL DRAMATIC CTA SECTION
+           ========================================================================== -->
+      <section class="final-cta-section" id="register">
+        <div class="container">
+          <div class="final-cta-card reveal-on-scroll">
+            <span class="final-cta-tag">THE CLOCK IS TICKING</span>
+            <h2 class="final-cta-heading">READY TO EMBARK <br>ON THE ODYSSEY?</h2>
+            
+            <div class="final-wordmark-reprise">HACK ODYSSEY 4.0</div>
+            <p class="final-cta-date">25–26 SEPTEMBER 2026 &bull; 24-HOUR HACKATHON</p>
+
+            <div class="hero-cta-group" style="margin-bottom: 0;">
+              <a href="#" class="btn-primary-glow js-register-link">
+                <span>REGISTER NOW</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="#" class="btn-secondary-glass js-whatsapp-link">
+                <i class="fa-brands fa-whatsapp whatsapp-icon-accent"></i>
+                <span>JOIN WHATSAPP GROUP</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ==========================================================================
+         FOOTER
+         ========================================================================== -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top-grid">
+          <div>
+            <div class="footer-brand-title">HACK ODYSSEY 4.0</div>
+            <p class="footer-brand-desc">
+              24-Hour Hackathon conducted by Kalasalingam Academy of Research and Education under Euphoria 2026. Empowering the next generation of AI innovators.
+            </p>
+          </div>
+          <div class="footer-links-col">
+            <h4>QUICK NAVIGATION</h4>
+            <ul class="footer-links-list">
+              <li><a href="#hero">Home</a></li>
+              <li><a href="#about">About Odyssey</a></li>
+              <li><a href="#event">Specifications</a></li>
+              <li><a href="#sdgs">SDG Challenges</a></li>
+              <li><a href="#venue">Auditorium Venue</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h4>CONNECT &amp; REGISTER</h4>
+            <ul class="footer-links-list">
+              <li><a href="#" class="js-register-link">Registration Form</a></li>
+              <li><a href="#" class="js-whatsapp-link">WhatsApp Community</a></li>
+              <li><a href="#coordinators">Coordinator Contacts</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom-flex">
+          <div class="footer-credits">
+            <span>Developed with</span>
+            <i class="fa-solid fa-heart heart-pulse-icon"></i>
+            <span>by Students of KARE</span>
+          </div>
+          <div style="font-size: 0.85rem; color: var(--text-muted); font-family: var(--font-mono);">
+            &copy; 2026 Kalasalingam Academy of Research and Education. All Rights Reserved.
+          </div>
+          <a href="#hero" class="footer-back-to-top" id="backToTopBtn" aria-label="Back to top">
+            <span>TOP</span>
+            <i class="fa-solid fa-arrow-up"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

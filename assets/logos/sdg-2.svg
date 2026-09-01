@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <rect width="120" height="120" rx="18" fill="#DDA63A"/>
+  <text x="12" y="32" font-family="'Space Grotesk', -apple-system, sans-serif" font-size="22" font-weight="900" fill="#FFFFFF">2</text>
+  <text x="32" y="20" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="800" fill="#FFFFFF" letter-spacing="0.5">ZERO</text>
+  <text x="32" y="30" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="800" fill="#FFFFFF" letter-spacing="0.5">HUNGER</text>
+  <g transform="translate(24, 42)" fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8 34 C8 50 64 50 64 34 Z" fill="#FFFFFF" stroke-width="2"/>
+    <path d="M16 26 Q36 18 56 26" stroke-width="3"/>
+    <path d="M36 22 L36 4" stroke-width="3.5"/>
+    <path d="M36 12 Q46 8 49 3" stroke-width="2.5"/>
+    <path d="M36 16 Q26 12 23 7" stroke-width="2.5"/>
+    <path d="M36 6 Q44 2 46 -2" stroke-width="2.5"/>
+    <path d="M36 8 Q28 4 26 0" stroke-width="2.5"/>
+  </g>
+</svg>
