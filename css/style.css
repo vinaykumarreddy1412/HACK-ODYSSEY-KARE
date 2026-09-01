@@ -2502,6 +2502,17 @@ a {
   }
 }
 
+/* Global Mobile Overflow Guard */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.site-wrapper {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 /* ==========================================================================
    RESPONSIVE DESIGN BREAKPOINTS
    ========================================================================== */
@@ -2522,6 +2533,9 @@ a {
   .sdg-cards-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .convenors-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .footer-top-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -2529,12 +2543,15 @@ a {
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding: 0 1.25rem;
+  }
   .brand-ribbon-container {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 1rem;
-    gap: 1.25rem;
+    padding: 0.85rem 1rem;
+    gap: 0.85rem;
   }
   .brand-main-host {
     flex-direction: column;
@@ -2542,44 +2559,190 @@ a {
   }
   .host-logo-img {
     height: auto;
-    max-height: 58px;
-    max-width: 280px;
+    max-height: 52px;
+    max-width: 240px;
   }
   .brand-co-partners {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.75rem;
+    gap: 0.6rem;
   }
   .partner-logo-img {
-    height: 44px;
-    max-width: 140px;
+    height: 38px;
+    max-width: 120px;
+  }
+  .navbar-container {
+    padding: 0.5rem 1rem;
+  }
+  .nav-brand-link span {
+    font-size: 0.95rem;
+  }
+  .btn-nav-whatsapp {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.75rem;
+  }
+  .btn-nav-register {
+    padding: 0.55rem 1rem;
+    font-size: 0.78rem;
   }
   .hero-section {
-    padding: 2rem 0 3.5rem;
+    padding: 1.5rem 0 3rem;
+  }
+  .wordmark-title {
+    font-size: clamp(2.4rem, 9vw, 4rem);
+  }
+  .wordmark-edition {
+    font-size: clamp(2.2rem, 8vw, 3.8rem);
+  }
+  .hero-tagline {
+    font-size: 0.88rem;
+    letter-spacing: 0.1em;
+  }
+  .hero-chips-grid {
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  .hero-chip-item {
+    padding: 0.45rem 0.85rem;
+    font-size: 0.78rem;
   }
   .hero-cta-group {
     flex-direction: column;
     width: 100%;
+    gap: 0.85rem;
   }
   .btn-primary-glow,
   .btn-secondary-glass {
     width: 100%;
+    justify-content: center;
+    padding: 0.85rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  .hero-countdown-card {
+    padding: 1.5rem 1rem;
+    border-radius: 20px;
   }
   .countdown-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  .countdown-box {
+    padding: 0.75rem 0.5rem;
+  }
+  .countdown-number {
+    font-size: 1.8rem;
+  }
+  .countdown-unit {
+    font-size: 0.68rem;
+  }
+  .spec-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .prize-hero-card {
+    padding: 2.25rem 1.25rem;
+    border-radius: 24px;
+  }
+  .prize-pool-amount {
+    font-size: clamp(2.8rem, 10vw, 4.5rem);
   }
   .sdg-cards-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
   .convenors-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .faculty-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .student-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .venue-info-card,
+  .map-wrapper-glass {
+    border-radius: 20px;
+  }
+  .map-wrapper-glass iframe {
+    height: 280px;
+  }
+  .final-cta-card {
+    padding: 3rem 1.25rem;
+    border-radius: 24px;
+  }
+  .final-cta-heading {
+    font-size: clamp(1.8rem, 7vw, 3rem);
+  }
+  .final-wordmark-reprise {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
   }
   .section-padding {
-    padding: 4rem 0;
+    padding: 3.5rem 0;
   }
   .footer-bottom-flex {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-nav-whatsapp span {
+    display: none;
+  }
+  .btn-nav-whatsapp {
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    justify-content: center;
+  }
+  .btn-nav-whatsapp i {
+    font-size: 1.15rem;
+    margin: 0;
+  }
+  .btn-nav-register span {
+    font-size: 0.75rem;
+  }
+  .btn-nav-register {
+    padding: 0.45rem 0.85rem;
+  }
+  .hero-chips-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hero-chip-highlight {
+    grid-column: span 2;
+  }
+  .student-actions-flex {
+    gap: 0.5rem;
+  }
+  .btn-call-coordinator,
+  .btn-whatsapp-coordinator {
+    padding: 0.65rem 0.4rem;
+    font-size: 0.78rem;
+  }
+  .org-card-item {
+    padding: 0.65rem 1rem;
+    border-radius: 16px;
+  }
+  .org-logo-img {
+    height: 48px;
+    width: 48px;
+  }
+  .org-logo-img.wide-logo {
+    height: 48px;
+    max-width: 150px;
+  }
+  .org-logo-img.ieee-logo-large {
+    height: 65px;
+    max-width: 160px;
+  }
+  .org-logo-img.acm-logo-large {
+    height: 60px;
+    max-width: 150px;
   }
 }
 
