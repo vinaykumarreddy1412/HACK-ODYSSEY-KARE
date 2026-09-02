@@ -81,10 +81,11 @@ const EVENT_CONFIG = {
     { name: "Mrs. B. Lavanya", designation: "AP/CSE", role: "Faculty Coordinator", initials: "BL" },
     { name: "Mrs. S. Shanmuga Priya", designation: "AP/CSE", role: "Faculty Coordinator", initials: "SP" },
     { name: "Mr. C. Sivamurugan", designation: "AP/CSE", role: "Faculty Coordinator", initials: "CS" },
-    { name: "Dr. M. K. Nagarajan", designation: "AP/CSE", role: "Faculty Coordinator", initials: "MN" },
-    { name: "Dr. R. Rajasekhar", designation: "AP/CSE", role: "Faculty Coordinator", initials: "RR" },
-    { name: "Dr. T. Dhilipan Raj Kumar", designation: "AP/CSE", role: "Faculty Coordinator", initials: "TD" },
-    { name: "Mr. Aravind Chandran", designation: "ASP/CSE", role: "Faculty Coordinator", initials: "AC" }
+    { name: "Dr. M. K. Nagarajan", designation: "ASP/CSE", role: "Faculty Coordinator", initials: "MN" },
+    { name: "Dr. R. Rajasekhar", designation: "ASP/CSE", role: "Faculty Coordinator", initials: "RR" },
+    { name: "Dr. T. Dhilipan Raj Kumar", designation: "ASP/CSE", role: "Faculty Coordinator", initials: "TD" },
+    { name: "Mr. Aravind Chandran", designation: "ASP/CSE", role: "Faculty Coordinator", initials: "AC" },
+    { name: "Mrs. P. J. Kiruthiga", designation: "AP/CSE", role: "Faculty Coordinator", initials: "PK" }
   ],
   
   // Student Coordinators
