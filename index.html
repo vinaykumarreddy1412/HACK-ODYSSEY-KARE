@@ -11,10 +11,15 @@
   <meta property="og:title" content="HACK ODYSSEY 4.0 — 24-Hour National Level Hackathon">
   <meta property="og:description" content="Code. Create. Conquer the Odyssey. 25–26 September 2026 at Krishna Auditorium, KARE. Up to ₹1,00,000 Prize Pool.">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#f8fafc">
+  <meta name="theme-color" content="#030206">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/logos/kalasalingam-round.png">
+
+  <!-- Google Fonts: Bebas Neue, Big Shoulders Display, Inter, Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Big+Shoulders+Display:wght@700;800;900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome Icons CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -22,33 +27,57 @@
   <!-- Core Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="dark-theme">
 
   <!-- ==========================================================================
-       OPENING / LOADING EXPERIENCE ("ENTERING THE ODYSSEY")
+       PRELOADER / LOADING EXPERIENCE ("ENTERING THE ODYSSEY")
        ========================================================================== -->
-  <div id="introOverlay" aria-label="Entering the Odyssey intro animation" role="dialog" aria-modal="true">
-    <div class="intro-bg-grid"></div>
-    <div class="intro-card">
-      <div class="intro-logo-wrapper">
-        <div class="intro-energy-ring"></div>
-        <div class="intro-energy-ring-2"></div>
-        <img src="assets/logos/kalasalingam-round.png" alt="Kalasalingam Academy of Research and Education Logo" class="intro-logo-img">
-      </div>
-      <div class="intro-status">
-        <span class="intro-status-dot"></span>
-        <span>ENTERING THE ODYSSEY</span>
-      </div>
-      <h2 class="intro-title">HACK ODYSSEY 4.0</h2>
-      <p class="intro-subtitle">Euphoria 2026 &bull; Kalasalingam University</p>
+  <div id="introOverlay" class="hackodyssey-preloader" aria-label="Entering the Odyssey intro animation" role="dialog" aria-modal="true">
+    <div class="hop-background"></div>
+    <div class="hop-atmosphere"></div>
+    <div class="hop-particles-container">
+      <div class="hop-particle hop-particle-a"></div>
+      <div class="hop-particle hop-particle-b"></div>
+      <div class="hop-particle hop-particle-c"></div>
+      <div class="hop-particle hop-particle-d"></div>
     </div>
-    <button id="introSkipBtn" class="intro-skip-btn" aria-label="Skip Intro Animation">
-      Skip Intro <i class="fa-solid fa-forward-step" style="margin-left: 0.3rem;"></i>
+    
+    <div class="hop-central-core"></div>
+    
+    <div class="hop-identity-group">
+      <div class="hop-logo-halo"></div>
+      <div class="hop-logo-container">
+        <img src="assets/logos/kalasalingam-round.png" alt="KARE Logo" class="hop-logo-img">
+        <div class="hop-logo-sweep"></div>
+      </div>
+      
+      <div class="hop-event-text-group">
+        <div class="hop-presents-mask">
+          <span class="hop-presents-text">EUPHORIA 2026 &bull; KALASALINGAM UNIVERSITY</span>
+        </div>
+        <div class="hop-title-wrap">
+          <div class="hop-title-mask">
+            <span class="hop-title-word">HACK</span>
+          </div>
+          <div class="hop-odyssey-group">
+            <div class="hop-title-mask">
+              <span class="hop-title-word">ODYSSEY</span>
+            </div>
+            <div class="hop-badge-wrap">
+              <span class="hop-badge-exponent">4.0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button id="introSkipBtn" class="hop-skip-btn" aria-label="Skip Intro Animation">
+      <span>SKIP</span> <span class="hop-skip-key">ESC</span>
     </button>
   </div>
 
   <!-- ==========================================================================
-       BACKGROUND AI NEURAL MESH & PARTICLES (LIGHT FUTURISTIC)
+       BACKGROUND AI CYBER MESH & PARTICLES
        ========================================================================== -->
   <div class="bg-mesh-container" aria-hidden="true">
     <div class="bg-mesh-gradient"></div>
@@ -92,8 +121,9 @@
 
         <ul class="nav-links-desktop">
           <li class="nav-link-item"><a href="#hero">HOME</a></li>
+          <li class="nav-link-item"><a href="#prizepool">PRIZES</a></li>
           <li class="nav-link-item"><a href="#about">ABOUT</a></li>
-          <li class="nav-link-item"><a href="#event">EVENT</a></li>
+          <li class="nav-link-item"><a href="#event">SPECIFICATIONS</a></li>
           <li class="nav-link-item"><a href="#sdgs">SDGs</a></li>
           <li class="nav-link-item"><a href="#venue">VENUE</a></li>
           <li class="nav-link-item"><a href="#coordinators">COORDINATORS</a></li>
@@ -125,8 +155,9 @@
       </div>
       <ul class="drawer-nav-links">
         <li><a href="#hero">HOME</a></li>
+        <li><a href="#prizepool">PRIZES</a></li>
         <li><a href="#about">ABOUT</a></li>
-        <li><a href="#event">EVENT</a></li>
+        <li><a href="#event">SPECIFICATIONS</a></li>
         <li><a href="#sdgs">SDGs</a></li>
         <li><a href="#venue">VENUE</a></li>
         <li><a href="#coordinators">COORDINATORS</a></li>
@@ -155,7 +186,7 @@
             </div>
           </div>
 
-          <!-- THE PURE CSS / HTML FUTURISTIC WORDMARK -->
+          <!-- THE GRAND BEBAS NEUE WORDMARK -->
           <div class="wordmark-container reveal-on-scroll">
             <div class="wordmark-wrapper">
               <h1 class="wordmark-title">
@@ -173,7 +204,7 @@
           </div>
 
           <div class="hero-date-wrapper reveal-on-scroll">
-            <span class="hero-date-text">25 — 26 SEPTEMBER 2026</span>
+            <span class="hero-date-text">25 — 26 SEPTEMBER 2026 &bull; KRISHNA AUDITORIUM, KARE</span>
           </div>
 
           <p class="hero-tagline reveal-on-scroll">CODE. CREATE. CONQUER THE ODYSSEY.</p>
@@ -182,11 +213,11 @@
           <div class="hero-chips-grid reveal-on-scroll">
             <div class="hero-chip-item">
               <i class="fa-regular fa-clock hero-chip-icon"></i>
-              <span>24 HOURS</span>
+              <span>24 HOURS NON-STOP</span>
             </div>
             <div class="hero-chip-item">
               <i class="fa-solid fa-location-dot hero-chip-icon"></i>
-              <span>OFFLINE MODE</span>
+              <span>OFFLINE ON-CAMPUS</span>
             </div>
             <div class="hero-chip-item">
               <i class="fa-solid fa-ticket hero-chip-icon"></i>
@@ -194,11 +225,11 @@
             </div>
             <div class="hero-chip-item">
               <i class="fa-solid fa-users hero-chip-icon"></i>
-              <span>TEAM 4–5</span>
+              <span>TEAM 4–5 MEMBERS</span>
             </div>
             <div class="hero-chip-item hero-chip-highlight">
-              <i class="fa-solid fa-trophy hero-chip-icon" style="color: var(--accent-electric);"></i>
-              <span>PRIZE UP TO ₹1,00,000</span>
+              <i class="fa-solid fa-trophy hero-chip-icon"></i>
+              <span>PRIZE POOL UP TO ₹1,00,000</span>
             </div>
           </div>
 
@@ -217,7 +248,7 @@
           <!-- Live Countdown Clock -->
           <div class="hero-countdown-card reveal-on-scroll">
             <div class="countdown-label">
-              <i class="fa-solid fa-bolt" style="color: var(--accent-cyan); margin-right: 0.4rem;"></i>
+              <i class="fa-solid fa-bolt" style="color: var(--purple-badge); margin-right: 0.4rem;"></i>
               COUNTDOWN TO THE ODYSSEY
             </div>
             <div class="countdown-grid">
@@ -248,7 +279,7 @@
            ========================================================================== -->
       <section class="org-rail-section" aria-label="Partner Organizations and Clubs">
         <div class="org-rail-header">
-          <span class="org-rail-title">POWERED BY INNOVATION</span>
+          <span class="org-rail-title">POWERED BY INNOVATION &amp; STUDENT CLUBS</span>
         </div>
         <div class="marquee-container">
           <div class="marquee-track">
@@ -290,65 +321,114 @@
       </section>
 
       <!-- ==========================================================================
-           EVENT HIGHLIGHTS & PRIZE POOL SHOWCASE
+           MAIN PRIZE POOL SHOWCASE (EXACT TARGET SITE DESIGN)
            ========================================================================== -->
-      <section class="highlights-section" id="highlights">
-        <div class="container">
+      <section class="prizepool-section" id="prizepool">
+        <div class="prizepool-bg-word bg-word-compete">COMPETE</div>
+        <div class="prizepool-bg-word bg-word-create">CREATE</div>
+        <div class="prizepool-bg-word bg-word-conquer">CONQUER</div>
+
+        <div class="container" style="position: relative; z-index: 10; text-align: center;">
           
-          <!-- ₹1,00,000 Giant Prize Pool Showcase -->
-          <div class="prize-hero-card reveal-on-scroll">
-            <div class="prize-top-badge">
-              <i class="fa-solid fa-crown" style="color: var(--accent-cyan);"></i>
-              PREMIER PRIZE REWARD
-            </div>
-            <div class="prize-amount-huge">₹1,00,000</div>
-            <h3 class="prize-pool-label">TOTAL PRIZE POOL</h3>
-            <p class="prize-desc">Compete against the brightest minds across India. Build visionary prototypes, impress industry judges, and win prestigious prizes and recognition.</p>
+          <div class="reveal-on-scroll">
+            <span class="prizepool-eyebrow-line"></span>
+            <span class="prizepool-eyebrow-text">PREMIER PRIZE POOL REWARD</span>
+            <span class="prizepool-eyebrow-line"></span>
           </div>
 
-          <!-- Secondary Metric Grid -->
-          <div class="stats-grid">
-            <div class="stat-card-glass reveal-on-scroll">
-              <div class="stat-card-icon-wrap">
-                <i class="fa-regular fa-calendar-check"></i>
-              </div>
-              <div class="stat-value">25–26</div>
-              <div class="stat-label">SEPTEMBER 2026</div>
-            </div>
+          <div class="first-message prize-display-font reveal-on-scroll" style="margin-top: 1rem;">
+            GRAND REWARD POOL
+          </div>
 
-            <div class="stat-card-glass reveal-on-scroll">
-              <div class="stat-card-icon-wrap">
-                <i class="fa-solid fa-hourglass-half"></i>
+          <!-- THE GLOWING ANGLED HERO PRIZE BOX -->
+          <div class="hero-prize-scroll-container reveal-on-scroll">
+            <div class="hero-prize-box">
+              <div class="hero-prize-flare-left">
+                <span class="hero-prize-flare-dot-left"></span>
               </div>
-              <div class="stat-value">24</div>
-              <div class="stat-label">HOURS OF HACKING</div>
-            </div>
-
-            <div class="stat-card-glass reveal-on-scroll">
-              <div class="stat-card-icon-wrap">
-                <i class="fa-solid fa-receipt"></i>
+              <div class="hero-prize-amount">₹1,00,000</div>
+              <div class="hero-prize-flare-right">
+                <span class="hero-prize-flare-dot-right"></span>
               </div>
-              <div class="stat-value">₹300</div>
-              <div class="stat-label">PER MEMBER</div>
-            </div>
-
-            <div class="stat-card-glass reveal-on-scroll">
-              <div class="stat-card-icon-wrap">
-                <i class="fa-solid fa-people-group"></i>
-              </div>
-              <div class="stat-value">4–5</div>
-              <div class="stat-label">TEAM MEMBERS</div>
-            </div>
-
-            <div class="stat-card-glass reveal-on-scroll">
-              <div class="stat-card-icon-wrap">
-                <i class="fa-solid fa-building-columns"></i>
-              </div>
-              <div class="stat-value">OFFLINE</div>
-              <div class="stat-label">ON-CAMPUS MODE</div>
             </div>
           </div>
 
+          <div class="second-message prize-display-font reveal-on-scroll">
+            FOR THE ODYSSEY CHAMPIONS
+          </div>
+
+          <div class="prize-editorial-desc reveal-on-scroll">
+            <p>Compete against the brightest student innovators across India. Architect groundbreaking solutions, present to eminent judges, and conquer the grand prize pool with cash awards, trophies, and prestigious recognition.</p>
+          </div>
+
+          <div class="prizepool-divider-motif reveal-on-scroll">
+            <span class="prizepool-divider-line"></span>
+            <span class="prizepool-diamond"></span>
+            <span class="prizepool-divider-line"></span>
+          </div>
+
+          <!-- 3 PRIZE COLUMNS -->
+          <div class="prize-columns-container reveal-on-scroll">
+            <div class="prize-column-item">
+              <span class="prize-rank-number">02</span>
+              <span class="prize-rank-underline"></span>
+              <span class="prize-col-amount">₹30,000</span>
+              <span class="prize-rank-label">RUNNER UP</span>
+            </div>
+
+            <div class="prize-column-separator"></div>
+
+            <div class="prize-column-item">
+              <span class="prize-rank-number" style="color: #f4efe7;">01</span>
+              <span class="prize-rank-underline" style="width: 40px; background: #b88cff;"></span>
+              <span class="prize-col-amount prize-col-amount-first">₹50,000</span>
+              <span class="prize-rank-label" style="color: #fff; font-weight: 700;">WINNER &bull; FIRST PLACE</span>
+            </div>
+
+            <div class="prize-column-separator"></div>
+
+            <div class="prize-column-item">
+              <span class="prize-rank-number">03</span>
+              <span class="prize-rank-underline"></span>
+              <span class="prize-col-amount">₹20,000</span>
+              <span class="prize-rank-label">2ND RUNNER UP</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           PREVIOUS CHAMPIONS MARQUEE (EXACT TARGET SITE DESIGN)
+           ========================================================================== -->
+      <section class="winners-page4" aria-label="Previous Champions Marquee">
+        <div class="winners-vignette-overlay"></div>
+        
+        <div class="winners-topText">
+          <h2 class="winners-main-title">
+            WINNERS / PREVIOUS CHAMPIONS
+            <span class="winners-badge-exponent">4.0</span>
+          </h2>
+        </div>
+
+        <div class="winners-slider">
+          <div class="winners-box">
+            <h3 style="--index:1; --time:24s;">CODE. CREATE. CONQUER. <span class="winners-badge-exponent-marquee">4.0</span></h3>
+            <h3 style="--index:2; --time:24s;">NATIONAL LEVEL SPRINT <span class="winners-badge-exponent-marquee">4.0</span></h3>
+            <h3 style="--index:3; --time:24s;">EUPHORIA 2026 &bull; KARE <span class="winners-badge-exponent-marquee">4.0</span></h3>
+            <h3 style="--index:4; --time:24s;">₹1,00,000 PRIZE POOL <span class="winners-badge-exponent-marquee">4.0</span></h3>
+          </div>
+        </div>
+
+        <div class="winners-bottomText">
+          <div class="winners-progress-container">
+            <div class="winners-progress-bar">
+              <div class="winners-progress-line" style="width: 100%;"></div>
+            </div>
+          </div>
+          <span style="font-family: Inter, sans-serif; font-size: 0.8rem; letter-spacing: 0.2em; color: #a8a4ba; text-transform: uppercase;">
+            KALASALINGAM ACADEMY OF RESEARCH AND EDUCATION
+          </span>
         </div>
       </section>
 
@@ -367,9 +447,9 @@
               </p>
               
               <div class="about-tags-flex">
-                <span class="about-tag-badge"><i class="fa-solid fa-brain" style="color: var(--accent-electric); margin-right: 0.35rem;"></i> Artificial Intelligence</span>
-                <span class="about-tag-badge"><i class="fa-solid fa-microchip" style="color: var(--accent-cyan); margin-right: 0.35rem;"></i> Emerging Tech</span>
-                <span class="about-tag-badge"><i class="fa-solid fa-handshake" style="color: var(--accent-violet); margin-right: 0.35rem;"></i> Collaboration</span>
+                <span class="about-tag-badge"><i class="fa-solid fa-brain" style="color: var(--purple-bright); margin-right: 0.35rem;"></i> Artificial Intelligence</span>
+                <span class="about-tag-badge"><i class="fa-solid fa-microchip" style="color: var(--purple-badge); margin-right: 0.35rem;"></i> Emerging Tech</span>
+                <span class="about-tag-badge"><i class="fa-solid fa-handshake" style="color: var(--purple-primary); margin-right: 0.35rem;"></i> Collaboration</span>
                 <span class="about-tag-badge"><i class="fa-solid fa-lightbulb" style="color: #f59e0b; margin-right: 0.35rem;"></i> Problem Solving</span>
                 <span class="about-tag-badge"><i class="fa-solid fa-leaf" style="color: #10b981; margin-right: 0.35rem;"></i> Sustainability</span>
               </div>
@@ -381,7 +461,7 @@
                   <i class="fa-solid fa-wand-magic-sparkles"></i>
                 </div>
                 <div>
-                  <h3 class="pillar-title">AI & Emerging Tech Focus</h3>
+                  <h3 class="pillar-title">AI &amp; Emerging Tech Focus</h3>
                   <p class="pillar-desc">Leverage cutting-edge LLMs, computer vision, generative AI, and embedded IoT architectures to solve critical challenges.</p>
                 </div>
               </div>
@@ -401,7 +481,7 @@
                   <i class="fa-solid fa-shield-halved"></i>
                 </div>
                 <div>
-                  <h3 class="pillar-title">National Stage & Mentorship</h3>
+                  <h3 class="pillar-title">National Stage &amp; Mentorship</h3>
                   <p class="pillar-desc">Network with veteran researchers, industry leaders, and tech pioneers guiding your implementation.</p>
                 </div>
               </div>
@@ -456,7 +536,7 @@
                 <i class="fa-solid fa-tags spec-icon"></i>
               </div>
               <div class="spec-value">₹300 / Member</div>
-              <div class="spec-sub">Inclusive of Food & Amenities</div>
+              <div class="spec-sub">Inclusive of Food &amp; Amenities</div>
             </div>
 
             <div class="spec-card reveal-on-scroll">
@@ -474,7 +554,7 @@
                 <i class="fa-solid fa-location-crosshairs spec-icon"></i>
               </div>
               <div class="spec-value">Offline (On-Campus)</div>
-              <div class="spec-sub">High-Speed WiFi & Power Stations</div>
+              <div class="spec-sub">High-Speed WiFi &amp; Power Stations</div>
             </div>
 
             <div class="spec-card reveal-on-scroll">
@@ -482,8 +562,8 @@
                 <span class="spec-key">PRIZE POOL</span>
                 <i class="fa-solid fa-award spec-icon"></i>
               </div>
-              <div class="spec-value" style="color: var(--accent-electric);">Up to ₹1,00,000</div>
-              <div class="spec-sub">Cash, Trophies & Certificates</div>
+              <div class="spec-value" style="color: var(--purple-badge);">Up to ₹1,00,000</div>
+              <div class="spec-sub">Cash, Trophies &amp; Certificates</div>
             </div>
 
             <div class="spec-card reveal-on-scroll">
@@ -541,7 +621,7 @@
                   </li>
                   <li class="venue-detail-item">
                     <i class="fa-solid fa-wifi"></i>
-                    <span>High-Speed Gigabit Dedicated Wi-Fi & Dedicated LAN Drops</span>
+                    <span>High-Speed Gigabit Dedicated Wi-Fi &amp; Dedicated LAN Drops</span>
                   </li>
                   <li class="venue-detail-item">
                     <i class="fa-solid fa-plug-circle-bolt"></i>
@@ -549,7 +629,7 @@
                   </li>
                   <li class="venue-detail-item">
                     <i class="fa-solid fa-utensils"></i>
-                    <span>24/7 Food, Refreshments & Rest Zones for all Participants</span>
+                    <span>24/7 Food, Refreshments &amp; Rest Zones for all Participants</span>
                   </li>
                 </ul>
               </div>
@@ -585,7 +665,7 @@
       <section class="leadership-section section-padding" id="leadership">
         <div class="container">
           <div class="section-header reveal-on-scroll">
-            <span class="section-tag">05 / LEADERSHIP & CONVENORS</span>
+            <span class="section-tag">05 / LEADERSHIP &amp; CONVENORS</span>
             <h2 class="section-title">THE PEOPLE BEHIND <span class="gradient-span">THE ODYSSEY</span></h2>
             <p class="section-subtitle">Visionary academic leadership fostering research, innovation, and technological excellence at Kalasalingam University.</p>
           </div>
@@ -755,52 +835,68 @@
     </main>
 
     <!-- ==========================================================================
-         FOOTER
+         MEGA FOOTER (EXACT TARGET SITE DESIGN)
          ========================================================================== -->
-    <footer class="site-footer">
-      <div class="container">
-        <div class="footer-top-grid">
-          <div>
-            <div class="footer-brand-title">HACK ODYSSEY 4.0</div>
-            <p class="footer-brand-desc">
-              24-Hour National Level Hackathon conducted by Kalasalingam Academy of Research and Education under Euphoria 2026. Empowering the next generation of AI innovators.
+    <footer class="hack-footer-section">
+      <div class="footer-ambient-glow"></div>
+      
+      <div class="container" style="position: relative; z-index: 10; padding-top: 4rem;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2.5rem;">
+          
+          <div style="max-width: 28rem;">
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+              <img src="assets/logos/kalasalingam-round.png" alt="KARE Logo" style="width: 42px; height: 42px;">
+              <span style="font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 0.05em; color: #fff;">HACK ODYSSEY</span>
+              <span class="nav-brand-badge">4.0</span>
+            </div>
+            <p style="color: #cbd5e1; font-size: 0.92rem; line-height: 1.6; font-family: Inter, sans-serif;">
+              Premier 24-Hour National Level Hackathon organized by Kalasalingam Academy of Research and Education under Euphoria 2026. Empowering student innovators across India to build futuristic technological solutions.
             </p>
           </div>
-          <div class="footer-links-col">
-            <h4>QUICK NAVIGATION</h4>
-            <ul class="footer-links-list">
-              <li><a href="#hero">Home</a></li>
-              <li><a href="#about">About Odyssey</a></li>
-              <li><a href="#event">Specifications</a></li>
-              <li><a href="#sdgs">SDG Challenges</a></li>
-              <li><a href="#venue">Auditorium Venue</a></li>
+
+          <div class="footer-bracket-menu">
+            <h4 style="font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.1em; color: #b88cff; margin-bottom: 1rem;">QUICK LINKS</h4>
+            <ul style="display: flex; flex-direction: column; gap: 0.6rem; list-style: none;">
+              <li><a href="#hero">HOME</a></li>
+              <li><a href="#prizepool">GRAND PRIZES</a></li>
+              <li><a href="#about">ABOUT ODYSSEY</a></li>
+              <li><a href="#event">SPECIFICATIONS</a></li>
+              <li><a href="#sdgs">SDG CHALLENGES</a></li>
+              <li><a href="#venue">VENUE &amp; MAP</a></li>
+              <li><a href="#coordinators">COORDINATORS</a></li>
             </ul>
           </div>
-          <div class="footer-links-col">
-            <h4>CONNECT &amp; REGISTER</h4>
-            <ul class="footer-links-list">
-              <li><a href="#" class="js-register-link">Registration Form</a></li>
-              <li><a href="#" class="js-whatsapp-link">WhatsApp Community</a></li>
-              <li><a href="#coordinators">Coordinator Contacts</a></li>
-            </ul>
+
+          <div>
+            <h4 style="font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.1em; color: #b88cff; margin-bottom: 1rem;">JOIN THE ODYSSEY</h4>
+            <a href="https://euphoria.kalasalingam.ac.in" target="_blank" rel="noopener noreferrer" class="footer-cta-pill js-register-link" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.8rem 1.6rem; border-radius: 9999px; text-decoration: none; font-family: Inter, sans-serif; font-weight: 700; font-size: 0.9rem;">
+              <span>REGISTER NOW</span>
+              <div class="cta-arrow-circle" style="width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <i class="fa-solid fa-arrow-up" style="font-size: 0.75rem;"></i>
+              </div>
+            </a>
           </div>
+
         </div>
+      </div>
 
-        <div class="footer-divider"></div>
+      <!-- MEGA TYPOGRAPHY WATERMARK -->
+      <div class="footer-mega-typography-wrap">
+        <div class="footer-mega-title">
+          HACK ODYSSEY
+          <span class="footer-badge-exponent">4.0</span>
+        </div>
+      </div>
 
-        <div class="footer-bottom-flex">
-          <div class="footer-credits">
-            <span>Developed with</span>
-            <i class="fa-solid fa-heart heart-pulse-icon"></i>
-            <span>by Students of KARE</span>
+      <!-- BOTTOM CREDITS -->
+      <div style="border-top: 1px solid rgba(168, 85, 247, 0.15); padding: 1.5rem 0; background: rgba(3, 2, 6, 0.9);">
+        <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; font-size: 0.85rem; color: #a8a4ba; font-family: Inter, sans-serif;">
+          <div>
+            &copy; 2026 Kalasalingam Academy of Research and Education (KARE). All Rights Reserved.
           </div>
-          <div style="font-size: 0.85rem; color: var(--text-muted); font-family: var(--font-mono);">
-            &copy; 2026 Kalasalingam Academy of Research and Education. All Rights Reserved.
+          <div>
+            Crafted with <i class="fa-solid fa-heart" style="color: #a855f7; margin: 0 0.2rem;"></i> for Euphoria 2026
           </div>
-          <a href="#hero" class="footer-back-to-top" id="backToTopBtn" aria-label="Back to top">
-            <span>TOP</span>
-            <i class="fa-solid fa-arrow-up"></i>
-          </a>
         </div>
       </div>
     </footer>
