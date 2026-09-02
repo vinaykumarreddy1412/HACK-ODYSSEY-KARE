@@ -139,7 +139,7 @@ function initDynamicContent() {
 }
 
 /* ==========================================================================
-   3. CYBER PURPLE PARTICLE CANVAS
+   3. CYBER PURPLE PARTICLE CANVAS WITH MOUSE INTERACTION
    ========================================================================== */
 function initParticleNetwork() {
   const canvas = document.getElementById('aiCanvas');
@@ -150,22 +150,36 @@ function initParticleNetwork() {
   let width = (canvas.width = window.innerWidth);
   let height = (canvas.height = window.innerHeight);
 
+  const mouse = { x: null, y: null, radius: 170 };
+
+  window.addEventListener('mousemove', (e) => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+  });
+
+  window.addEventListener('mouseleave', () => {
+    mouse.x = null;
+    mouse.y = null;
+  });
+
   const particles = [];
-  const particleCount = Math.min(Math.floor((width * height) / 18000), 55);
+  const particleCount = Math.min(Math.floor((width * height) / 16000), 65);
 
   class Particle {
     constructor() {
       this.x = Math.random() * width;
       this.y = Math.random() * height;
-      this.vx = (Math.random() - 0.5) * 0.45;
-      this.vy = (Math.random() - 0.5) * 0.45;
+      this.baseX = this.x;
+      this.baseY = this.y;
+      this.vx = (Math.random() - 0.5) * 0.5;
+      this.vy = (Math.random() - 0.5) * 0.5;
       this.radius = Math.random() * 2 + 1.2;
       const palette = [
-        'rgba(168, 85, 247, ',  // Purple glow
-        'rgba(147, 51, 234, ',  // Purple primary
-        'rgba(192, 132, 252, ', // Purple bright
-        'rgba(216, 180, 254, ', // Purple light
-        'rgba(124, 60, 255, '   // Purple accent
+        'rgba(168, 85, 247, ',
+        'rgba(147, 51, 234, ',
+        'rgba(192, 132, 252, ',
+        'rgba(216, 180, 254, ',
+        'rgba(124, 60, 255, '
       ];
       this.color = palette[Math.floor(Math.random() * palette.length)];
       this.alpha = Math.random() * 0.5 + 0.3;
@@ -177,6 +191,18 @@ function initParticleNetwork() {
 
       if (this.x < 0 || this.x > width) this.vx *= -1;
       if (this.y < 0 || this.y > height) this.vy *= -1;
+
+      // Mouse attraction / repulsion force
+      if (mouse.x !== null && mouse.y !== null) {
+        const dx = mouse.x - this.x;
+        const dy = mouse.y - this.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        if (distance < mouse.radius) {
+          const force = (mouse.radius - distance) / mouse.radius;
+          this.x += (dx / distance) * force * 1.5;
+          this.y += (dy / distance) * force * 1.5;
+        }
+      }
     }
 
     draw() {
@@ -200,13 +226,32 @@ function initParticleNetwork() {
         const dy = particles[i].y - particles[j].y;
         const dist = Math.sqrt(dx * dx + dy * dy);
 
-        if (dist < 130) {
-          const lineAlpha = (1 - dist / 130) * 0.22;
+        if (dist < 140) {
+          const lineAlpha = (1 - dist / 140) * 0.25;
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
           ctx.strokeStyle = `rgba(168, 85, 247, ${lineAlpha})`;
           ctx.lineWidth = 0.8;
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Connect particles near mouse
+    if (mouse.x !== null && mouse.y !== null) {
+      for (let i = 0; i < particles.length; i++) {
+        const dx = mouse.x - particles[i].x;
+        const dy = mouse.y - particles[i].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist < mouse.radius) {
+          const lineAlpha = (1 - dist / mouse.radius) * 0.45;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.strokeStyle = `rgba(192, 132, 252, ${lineAlpha})`;
+          ctx.lineWidth = 1;
           ctx.stroke();
         }
       }
@@ -328,7 +373,6 @@ function initSmoothScroll() {
       if (targetEl) {
         e.preventDefault();
         
-        // Close mobile drawer if open
         const drawer = document.getElementById('mobileDrawer');
         const backdrop = document.getElementById('drawerBackdrop');
         drawer?.classList.remove('active');
@@ -346,21 +390,45 @@ function initSmoothScroll() {
 }
 
 /* ==========================================================================
-   8. INTERACTIVE FX
+   8. 3D INTERACTIVE CARD TILT & VISUAL FX
    ========================================================================== */
 function initInteractiveFx() {
-  // Reveal animation helper class
   const style = document.createElement('style');
   style.textContent = `
     .reveal-on-scroll {
       opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateY(35px) scale(0.97);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .reveal-on-scroll.revealed {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0) scale(1);
     }
   `;
   document.head.appendChild(style);
+
+  // 3D Card Tilt Effect on Cards
+  const tiltCards = document.querySelectorAll('.spec-card, .sdg-card-item, .convenor-card, .student-coord-card, .venue-info-card');
+  
+  tiltCards.forEach(card => {
+    card.style.transition = 'transform 0.25s ease-out, box-shadow 0.25s ease-out, border-color 0.25s ease-out';
+
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const rotateX = ((y - centerY) / centerY) * -6;
+      const rotateY = ((x - centerX) / centerX) * 6;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+    });
+  });
 }
