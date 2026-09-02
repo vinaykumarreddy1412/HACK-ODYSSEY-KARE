@@ -217,7 +217,7 @@ a {
 
 .hackodyssey-preloader .hop-logo-container {
   position: relative;
-  width: clamp(130px, 13vw, 190px);
+  width: clamp(170px, 18vw, 240px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -506,8 +506,8 @@ a {
    ========================================================================== */
 .top-brand-ribbon {
   background: rgba(3, 2, 6, 0.95);
-  border-bottom: 1px solid rgba(168, 85, 247, 0.15);
-  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+  padding: 0.85rem 0;
   position: relative;
   z-index: 100;
 }
@@ -520,33 +520,45 @@ a {
 }
 
 .host-logo-img {
-  height: 38px;
+  height: 60px;
   width: auto;
   filter: brightness(1.1);
+  transition: transform 0.3s ease;
+}
+
+.host-logo-img:hover {
+  transform: scale(1.03);
 }
 
 .brand-co-partners {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.8rem;
 }
 
 .partner-badge-item {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
 }
 
 .partner-label {
-  font-size: 0.75rem;
-  color: var(--text-dim);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--purple-light);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
 }
 
 .partner-logo-img {
-  height: 28px;
+  height: 48px;
   width: auto;
+  filter: brightness(1.1);
+  transition: transform 0.3s ease;
+}
+
+.partner-logo-img:hover {
+  transform: scale(1.05);
 }
 
 /* ==========================================================================
