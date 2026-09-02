@@ -51,8 +51,8 @@ function initIntroSequence() {
     }
   });
 
-  // Auto transition after 2.8 seconds
-  setTimeout(dismissIntro, 2800);
+  // Auto transition after 3.5 seconds
+  setTimeout(dismissIntro, 3500);
 }
 
 /* ==========================================================================
