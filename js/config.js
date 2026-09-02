@@ -84,7 +84,7 @@ const EVENT_CONFIG = {
     { name: "Dr. M. K. Nagarajan", designation: "ASP/CSE", role: "Faculty Coordinator", initials: "MN" },
     { name: "Dr. R. Rajasekhar", designation: "ASP/CSE", role: "Faculty Coordinator", initials: "RR" },
     { name: "Dr. T. Dhilipan Raj Kumar", designation: "ASP/CSE", role: "Faculty Coordinator", initials: "TD" },
-    { name: "Mr. Aravind Chandran", designation: "ASP/CSE", role: "Faculty Coordinator", initials: "AC" },
+    { name: "Mr. Aravind Chandran", designation: "AP/CSE", role: "Faculty Coordinator", initials: "AC" },
     { name: "Mrs. P. J. Kiruthiga", designation: "AP/CSE", role: "Faculty Coordinator", initials: "PK" }
   ],
   
